@@ -1,8 +1,14 @@
-import { FC } from "react";
+import { useState } from "react";
 import Containter from "react-bootstrap/Container";
+import dayjs from "dayjs";
+
 import DatePicker from "./Components/DatePicker";
 
-function App(): ReturnType<FC> {
+function App() {
+  const [displayDate, setDisplayDate] = useState<dayjs.Dayjs>(
+    dayjs().subtract(1, "day")
+  );
+
   return (
     <div className="App">
       <Containter>
@@ -58,7 +64,7 @@ function App(): ReturnType<FC> {
           </a>
         </section>
 
-        <DatePicker />
+        <DatePicker displayDate={displayDate} setDisplayDate={setDisplayDate} />
       </Containter>
     </div>
   );

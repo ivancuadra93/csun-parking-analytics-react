@@ -1,11 +1,12 @@
-import { FC, useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 import dayjs from "dayjs";
 
-function DatePicker(): ReturnType<FC> {
-  const [displayDate, setDisplayDate] = useState<dayjs.Dayjs>(
-    dayjs().subtract(1, "day")
-  );
+interface DatePickerProps {
+  displayDate: dayjs.Dayjs;
+  setDisplayDate: Dispatch<SetStateAction<dayjs.Dayjs>>;
+}
 
+function DatePicker({ displayDate, setDisplayDate }: DatePickerProps) {
   return (
     <div className="form-group mb-4">
       <label htmlFor="date-picker" className="form-label">
