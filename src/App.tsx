@@ -1,5 +1,6 @@
 import { FC } from "react";
 import Containter from "react-bootstrap/Container";
+import DatePicker from "./Components/DatePicker";
 
 function App(): ReturnType<FC> {
   return (
@@ -56,6 +57,8 @@ function App(): ReturnType<FC> {
             />
           </a>
         </section>
+
+        <DatePicker />
       </Containter>
     </div>
   );
